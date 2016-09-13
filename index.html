@@ -30,22 +30,22 @@ a {
 <body>
 <div id="map"></div>
 <div id="ctrlbtn">
-	<a href="#" onClick="openSetting()">設定</a>
+	<a href="#" onClick="openSetting()">Setting</a>
 </div>
 <div id="ctrlpane" style="display: none">
 	<form id="ctrlForm" name="ctrlForm" action="#">
 	<div class="colorSetting">
-		<input type="radio" name="colormap" value="std" checked> 標準
+		<input type="radio" name="colormap" value="std" checked> Standard
 	</div>
 	<div class="colorSetting">
-		<input type="radio" name="colormap" value="grayscale" > グレースケール
+		<input type="radio" name="colormap" value="grayscale" > Grayscale
 	</div>
 	<div class="colorSetting">
-		<input type="radio" name="colormap" value="grayscale_shallow" > グレースケール (湾岸部拡大)
+		<input type="radio" name="colormap" value="grayscale_shallow" > Grayscale (shallow region zoomed)
 	</div>
 	<div class="button">
-		<input type="button" onClick="applySetting()" value="適用">
-		<input type="button" onClick="closeSetting()" value="閉じる">
+		<input type="button" onClick="applySetting()" value="Apply">
+		<input type="button" onClick="closeSetting()" value="Close">
 	</div>
 	</form>
 </div>
