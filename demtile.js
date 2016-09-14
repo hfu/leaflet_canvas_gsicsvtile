@@ -1,3 +1,5 @@
+var tileSource = 'USGS';
+
 /**
  * Parse delimiter separated data
  */
@@ -29,10 +31,21 @@ function drawDemTile(canvas, tilePoint, zoom)
 	var x = tilePoint.x;
 	var y = tilePoint.y;
 
-	var u = 'https://cyberjapandata.gsi.go.jp/xyz/dem/';
+	var u = '';
+	if (tileSource == 'GSI') {
+		u = 'https://cyberjapandata.gsi.go.jp/xyz/dem/';
+	} else if (tileSource == 'USGS') {
+		u = 'http://earthexplorer.usgs.gov/wms/wmts/EPSG3857/srtm/';
+	}
 	u = u + String(zoom) + "/";
 	u = u + String(x) + "/";
-	u = u + String(y) + ".txt";
+	u = u + String(y);
+
+	if (tileSource == 'GSI') {
+		u = u + ".txt"
+	} else if (tileSource == 'USGS') {
+		u = u + ".csv"
+	}
 
 	$.ajax({
 		type: "GET",

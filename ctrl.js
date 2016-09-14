@@ -6,6 +6,7 @@ function openSetting()
 
 function applySetting()
 {
+	tileSource = $("input[name=tile]:checked").val();
 	colorMapSetting = $("input[name=colormap]:checked").val();
 	
 	map.removeLayer(canvasTiles);
