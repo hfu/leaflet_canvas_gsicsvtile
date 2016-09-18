@@ -28,8 +28,11 @@ function drawDemTile(canvas, tilePoint, zoom)
 {
 	var ctx = canvas.getContext('2d');
 
+  var n = 2 ** zoom;
 	var x = tilePoint.x;
-	var y = tilePoint.y;
+  while(x < 0) {x += n;}
+  x = x % n;
+	var y = tilePoint.y % n;
 
 	var u = '';
 	if (tileSource == 'GSI') {
