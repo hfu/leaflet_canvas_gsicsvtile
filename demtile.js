@@ -35,7 +35,7 @@ function drawDemTile(canvas, tilePoint, zoom)
 	if (tileSource == 'GSI') {
 		u = 'https://cyberjapandata.gsi.go.jp/xyz/dem/';
 	} else if (tileSource == 'USGS') {
-		u = 'http://earthexplorer.usgs.gov/wms/wmts/EPSG3857/srtm/';
+		u = 'http://hfu.github.io/experimental-srtm/';
 	}
 	u = u + String(zoom) + "/";
 	u = u + String(x) + "/";
@@ -58,7 +58,7 @@ function drawDemTile(canvas, tilePoint, zoom)
 				for (var i = 0; i < row.length; ++i) {
 					var v = row[i];
 					if (v == 'e') {continue;}
-					
+
 					var elev = parseFloat(v);
 					ctx.fillStyle = colorMap(elev);
 					ctx.fillRect(i, j, 1, 1);
