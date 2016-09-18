@@ -28,7 +28,7 @@ function drawDemTile(canvas, tilePoint, zoom)
 {
 	var ctx = canvas.getContext('2d');
 
-  var n = 2 ** zoom;
+  var n = Math.pow(2, zoom);
 	var x = tilePoint.x;
   while(x < 0) {x += n;}
   x = x % n;
