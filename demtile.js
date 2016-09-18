@@ -35,7 +35,7 @@ function drawDemTile(canvas, tilePoint, zoom)
 	if (tileSource == 'GSI') {
 		u = 'https://cyberjapandata.gsi.go.jp/xyz/dem/';
 	} else if (tileSource == 'USGS') {
-		u = 'http://hfu.github.io/experimental-srtm/';
+		u = 'https://hfu.github.io/experimental-srtm/';
 	}
 	u = u + String(zoom) + "/";
 	u = u + String(x) + "/";
